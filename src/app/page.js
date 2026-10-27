@@ -1,7 +1,6 @@
 import Preloader from "@/components/Preloader";
 import ScrollProgress from "@/components/ScrollProgress";
 import SmoothScroll from "@/components/SmoothScroll";
-import Cursor from "@/components/Cursor";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
@@ -17,7 +16,6 @@ export default function Home() {
     <SmoothScroll>
       <Preloader />
       <ScrollProgress />
-      <Cursor />
       <a
         href="#main"
         className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:rounded-lg focus:bg-violet-core focus:px-4 focus:py-2 focus:text-white"

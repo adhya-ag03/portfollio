@@ -15,13 +15,13 @@ export default function About() {
     <section id="about" className="relative mx-auto max-w-6xl scroll-mt-24 px-4 py-28 sm:px-6" aria-label="About me">
       <div className="pointer-events-none absolute -top-24 -right-24 h-96 w-96 rounded-full bg-violet-core/10 blur-3xl" aria-hidden="true" />
       <div className="pointer-events-none absolute bottom-0 -left-28 h-80 w-80 rounded-full bg-cyan/5 blur-3xl" aria-hidden="true" />
-      <SectionHeading title="About" subtitle="Who I am, what I build, and where I've been." />
+      <SectionHeading index="01" title="About" subtitle="Who I am, what I build, and where I've been." />
 
       <div className="grid gap-12 lg:grid-cols-[320px_1fr] lg:gap-16">
         {/* Portrait + badge */}
         <Reveal>
           <div className="relative mx-auto w-fit lg:mx-0">
-            <div className="absolute -inset-1 rounded-3xl bg-gradient-to-br from-violet-core via-magenta to-violet-core opacity-60 blur-md" aria-hidden="true" />
+            <div className="absolute -inset-px rounded-3xl bg-gradient-to-br from-violet-soft/60 via-white/10 to-transparent" aria-hidden="true" />
             <img
               src="/IMG_2037.png"
               alt={`Portrait of ${site.name}`}

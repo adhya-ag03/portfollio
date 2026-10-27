@@ -8,6 +8,12 @@ import Magnetic from "./Magnetic";
 
 const BlackHole = dynamic(() => import("./BlackHole"), { ssr: false });
 
+const ArrowIcon = (props) => (
+  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" {...props}>
+    <path d="M5 12h14M13 6l6 6-6 6" />
+  </svg>
+);
+
 const fadeUp = (delay) => ({
   initial: { opacity: 0, y: 28 },
   animate: { opacity: 1, y: 0 },
@@ -35,12 +41,14 @@ export default function Hero() {
       />
 
       <div className="relative z-10 mx-auto max-w-5xl px-4 text-center">
-        <motion.p
-          {...fadeUp(2.1)}
-          className="mb-6 font-mono text-xs tracking-[0.35em] text-violet-soft uppercase drop-shadow-[0_2px_8px_rgba(5,3,8,0.9)] sm:text-sm"
-        >
-          {site.location}
-        </motion.p>
+        <motion.div {...fadeUp(2.1)} className="mb-8 flex justify-center">
+          <span className="glass inline-flex items-center gap-2.5 rounded-full px-4 py-1.5 text-xs font-medium text-ink/85 sm:text-sm">
+            <span className="relative inline-block h-2 w-2 rounded-full bg-green-400 ping-dot" />
+            Open to opportunities
+            <span className="h-3 w-px bg-ink/20" aria-hidden="true" />
+            <span className="text-muted">{site.location}</span>
+          </span>
+        </motion.div>
 
         <h1 className="font-display text-5xl leading-tight font-bold uppercase sm:text-7xl md:text-8xl">
           <ScrambleText text="Adhya" as="span" className="glow-text block" startDelay={2200} />
@@ -49,66 +57,51 @@ export default function Hero() {
 
         <motion.p
           {...fadeUp(2.5)}
-          className="mt-6 font-display text-lg tracking-[0.25em] text-ink uppercase drop-shadow-[0_2px_12px_rgba(5,3,8,0.9)] sm:text-2xl"
+          className="mt-6 font-display text-lg font-medium tracking-wide text-ink drop-shadow-[0_2px_12px_rgba(5,3,8,0.9)] sm:text-2xl"
         >
           {site.title}
         </motion.p>
 
         <motion.p
           {...fadeUp(2.7)}
-          className="mx-auto mt-5 max-w-2xl text-sm text-ink/85 drop-shadow-[0_2px_10px_rgba(5,3,8,0.9)] sm:text-base"
+          className="mx-auto mt-5 max-w-2xl text-sm leading-relaxed text-ink/75 drop-shadow-[0_2px_10px_rgba(5,3,8,0.9)] sm:text-base"
         >
           {site.heroIntro}
         </motion.p>
 
-        <motion.div {...fadeUp(2.9)} className="mt-10 flex flex-wrap items-center justify-center gap-4">
-          <Magnetic>
-            <a
-              href="#contact"
-              onClick={scrollTo("#contact")}
-              className="inline-block rounded-full bg-gradient-to-r from-violet-core to-magenta px-7 py-3 font-display text-sm font-semibold tracking-wider text-white uppercase shadow-[0_0_30px_rgba(139,92,246,0.45)] transition-shadow hover:shadow-[0_0_48px_rgba(217,70,239,0.6)]"
-            >
-              Let&apos;s Connect
-            </a>
-          </Magnetic>
+        <motion.div {...fadeUp(2.9)} className="mt-10 flex flex-wrap items-center justify-center gap-3">
           <Magnetic>
             <a
               href="#projects"
               onClick={scrollTo("#projects")}
-              className="glass inline-block rounded-full px-7 py-3 font-display text-sm font-semibold tracking-wider text-ink uppercase transition-colors hover:border-violet-core/50 hover:text-violet-soft"
+              className="group inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3 text-sm font-semibold text-void transition-colors hover:bg-white"
             >
-              View Projects
+              View my work
+              <ArrowIcon className="transition-transform duration-300 group-hover:translate-x-0.5" />
             </a>
           </Magnetic>
           <Magnetic>
             <a
-              href={site.resumeUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block rounded-full border border-ink/25 px-7 py-3 font-display text-sm font-semibold tracking-wider text-ink/85 uppercase transition-colors hover:border-cyan/60 hover:text-cyan"
+              href="#contact"
+              onClick={scrollTo("#contact")}
+              className="glass inline-flex items-center rounded-full px-6 py-3 text-sm font-semibold text-ink transition-colors hover:border-ink/30 hover:bg-ink/10"
             >
-              Download Resume
+              Get in touch
             </a>
           </Magnetic>
+          <a
+            href={site.resumeUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 px-3 py-3 text-sm font-medium text-muted transition-colors hover:text-ink"
+          >
+            Resume
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <path d="M7 17 17 7M8 7h9v9" />
+            </svg>
+          </a>
         </motion.div>
       </div>
-
-      {/* Scroll hint */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 3.6, duration: 1 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
-        aria-hidden="true"
-      >
-        <div className="flex h-10 w-6 items-start justify-center rounded-full border border-violet-soft/40 p-1.5">
-          <motion.div
-            className="h-2 w-1 rounded-full bg-violet-soft"
-            animate={{ y: [0, 14, 0] }}
-            transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut" }}
-          />
-        </div>
-      </motion.div>
     </section>
   );
 }

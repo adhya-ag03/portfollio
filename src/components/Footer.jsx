@@ -48,7 +48,7 @@ export default function Footer() {
             © {year} {site.name}. All rights reserved.
           </p>
           <p className="font-mono text-xs text-muted/70">
-            Designed & built among the stars ✦
+            Built with Next.js & Tailwind CSS
           </p>
         </div>
       </div>

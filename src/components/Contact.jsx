@@ -52,7 +52,7 @@ export default function Contact() {
   return (
     <section id="contact" className="relative mx-auto max-w-4xl scroll-mt-24 px-4 py-28 sm:px-6" aria-label="Contact">
       <div className="pointer-events-none absolute -top-10 left-1/2 h-80 w-[38rem] max-w-full -translate-x-1/2 rounded-full bg-magenta/10 blur-3xl" aria-hidden="true" />
-      <SectionHeading title="Contact" subtitle="Have a model to fine-tune or a product to ship? Let's talk." />
+      <SectionHeading index="05" title="Contact" subtitle="Have a model to fine-tune or a product to ship? Let's talk." />
 
       <Reveal>
         <div className="glass rounded-3xl p-6 sm:p-10">

@@ -171,7 +171,7 @@ export default function Skills() {
     <section id="skills" className="relative mx-auto max-w-6xl scroll-mt-24 px-4 py-28 sm:px-6" aria-label="Skills">
       <div className="pointer-events-none absolute top-24 -right-28 h-96 w-96 rounded-full bg-violet-core/10 blur-3xl" aria-hidden="true" />
       <div className="pointer-events-none absolute bottom-10 -left-28 h-80 w-80 rounded-full bg-emerald/5 blur-3xl" aria-hidden="true" />
-      <SectionHeading title="Skills" subtitle="The stack I think in." />
+      <SectionHeading index="04" title="Skills" subtitle="The stack I think in." />
 
       <div className="space-y-10">
         {skillGroups.map((group, gi) => {

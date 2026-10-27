@@ -64,7 +64,7 @@ export default function Navbar() {
               <a
                 href={link.href}
                 onClick={go(link.href)}
-                className="group relative font-mono text-xs tracking-[0.2em] text-ink/80 uppercase drop-shadow-[0_1px_6px_rgba(5,3,8,0.9)] transition-colors hover:text-white"
+                className="group relative text-sm text-ink/70 drop-shadow-[0_1px_6px_rgba(5,3,8,0.9)] transition-colors hover:text-white"
               >
                 {link.label}
                 <span className="absolute -bottom-1 left-0 h-px w-0 bg-gradient-to-r from-violet-core to-magenta transition-all duration-300 group-hover:w-full" />
@@ -80,6 +80,14 @@ export default function Navbar() {
           </a>
           <a href={site.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile" className="hidden text-ink/75 transition-colors hover:text-violet-soft sm:block">
             <LinkedInIcon />
+          </a>
+          <a
+            href={site.resumeUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden rounded-full border border-white/15 px-4 py-1.5 text-sm font-medium text-ink transition-colors hover:border-white/30 hover:bg-white/5 md:inline-block"
+          >
+            Resume
           </a>
           <button
             className="flex h-10 w-10 flex-col items-center justify-center gap-1.5 md:hidden"
@@ -115,7 +123,7 @@ export default function Navbar() {
                   <a
                     href={link.href}
                     onClick={go(link.href)}
-                    className="block py-2.5 font-mono text-sm tracking-[0.2em] text-ink/85 uppercase hover:text-violet-soft"
+                    className="block py-2.5 text-base text-ink/85 hover:text-white"
                   >
                     {link.label}
                   </a>

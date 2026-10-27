@@ -29,10 +29,7 @@ export default function Education() {
     <section id="education" className="relative scroll-mt-24 py-28" aria-label="Education and certifications">
       <div className="pointer-events-none absolute top-1/2 left-1/2 h-72 w-[44rem] max-w-full -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan/5 blur-3xl" aria-hidden="true" />
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <SectionHeading
-          title="Education & Certs"
-          subtitle="Academic foundation and continuous learning."
-        />
+        <SectionHeading index="03" title="Education & Certs" subtitle="Academic foundation and continuous learning." />
       </div>
 
       <div className="marquee overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">

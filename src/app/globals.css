@@ -44,17 +44,6 @@ body {
   color: white;
 }
 
-/* Hide native cursor only when the custom one is active (desktop, fine pointer) */
-@media (pointer: fine) {
-  body[data-custom-cursor="true"] {
-    cursor: none;
-  }
-  body[data-custom-cursor="true"] a,
-  body[data-custom-cursor="true"] button {
-    cursor: none;
-  }
-}
-
 /* Focus rings for keyboard users */
 :focus-visible {
   outline: 2px solid var(--color-violet-soft);
@@ -80,16 +69,15 @@ body {
 /* ---------- Reusable pieces ---------- */
 
 .glass {
-  background: rgba(18, 11, 31, 0.55);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.015)), rgba(14, 9, 24, 0.6);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(139, 92, 246, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
 }
 
 .glow-text {
-  text-shadow:
-    0 0 24px rgba(139, 92, 246, 0.55),
-    0 0 72px rgba(217, 70, 239, 0.25);
+  text-shadow: 0 0 40px rgba(139, 92, 246, 0.35);
 }
 
 .gradient-text {
@@ -157,21 +145,6 @@ body {
   }
   .marquee {
     overflow-x: auto;
-  }
-}
-
-/* Spinning circular badge */
-@keyframes spin-slow {
-  to {
-    transform: rotate(360deg);
-  }
-}
-.spin-slow {
-  animation: spin-slow 14s linear infinite;
-}
-@media (prefers-reduced-motion: reduce) {
-  .spin-slow {
-    animation: none;
   }
 }
 

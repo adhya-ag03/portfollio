@@ -15,7 +15,7 @@ function TiltCard({ project }) {
     const rect = card.getBoundingClientRect();
     const px = (e.clientX - rect.left) / rect.width;
     const py = (e.clientY - rect.top) / rect.height;
-    card.style.transform = `perspective(900px) rotateY(${(px - 0.5) * 10}deg) rotateX(${(0.5 - py) * 10}deg)`;
+    card.style.transform = `perspective(900px) rotateY(${(px - 0.5) * 4}deg) rotateX(${(0.5 - py) * 4}deg)`;
     card.style.setProperty("--mx", `${px * 100}%`);
     card.style.setProperty("--my", `${py * 100}%`);
   };
@@ -62,7 +62,7 @@ function TiltCard({ project }) {
           {project.tags.map((tag) => (
             <span
               key={tag}
-              className="rounded-full border border-edge bg-space px-3 py-1 font-mono text-[11px] text-violet-soft"
+              className="rounded-md border border-white/8 bg-white/[0.03] px-2.5 py-1 font-mono text-[11px] text-ink/70"
             >
               {tag}
             </span>
@@ -83,7 +83,7 @@ function TiltCard({ project }) {
             href={project.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-1 rounded-xl border border-edge py-2.5 text-center font-mono text-xs tracking-wider text-ink uppercase transition-colors hover:border-violet-soft hover:text-violet-soft"
+            className="flex-1 rounded-lg border border-white/10 py-2.5 text-center text-sm font-medium text-ink/85 transition-colors hover:border-white/25 hover:text-ink"
           >
             GitHub
           </a>
@@ -91,9 +91,9 @@ function TiltCard({ project }) {
             href={project.demo}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-1 rounded-xl bg-gradient-to-r from-violet-core to-magenta py-2.5 text-center font-mono text-xs tracking-wider text-white uppercase transition-shadow hover:shadow-[0_0_24px_rgba(139,92,246,0.5)]"
+            className="flex-1 rounded-lg bg-ink py-2.5 text-center text-sm font-semibold text-void transition-colors hover:bg-white"
           >
-            Live Demo
+            Live demo
           </a>
         </div>
       </div>
@@ -109,24 +109,24 @@ export default function Projects() {
     <section id="projects" className="relative mx-auto max-w-6xl scroll-mt-24 px-4 py-28 sm:px-6" aria-label="Projects">
       <div className="pointer-events-none absolute top-32 -left-32 h-96 w-96 rounded-full bg-magenta/10 blur-3xl" aria-hidden="true" />
       <div className="pointer-events-none absolute -right-32 bottom-24 h-96 w-96 rounded-full bg-blue/10 blur-3xl" aria-hidden="true" />
-      <SectionHeading title="Projects" subtitle="Metric-driven work across AI/ML and the web." />
+      <SectionHeading index="02" title="Projects" subtitle="Metric-driven work across AI/ML and the web." />
 
       {/* Filter tabs */}
-      <div className="mb-12 flex flex-wrap gap-3" role="tablist" aria-label="Project filters">
+      <div className="glass mb-12 inline-flex flex-wrap gap-1 rounded-full p-1" role="tablist" aria-label="Project filters">
         {projectFilters.map((f) => (
           <button
             key={f}
             role="tab"
             aria-selected={filter === f}
             onClick={() => setFilter(f)}
-            className={`relative rounded-full px-6 py-2.5 font-mono text-xs tracking-widest uppercase transition-colors ${
-              filter === f ? "text-white" : "text-muted hover:text-ink"
+            className={`relative rounded-full px-5 py-2 text-sm font-medium transition-colors ${
+              filter === f ? "text-void" : "text-muted hover:text-ink"
             }`}
           >
             {filter === f && (
               <motion.span
                 layoutId="project-tab"
-                className="absolute inset-0 rounded-full bg-gradient-to-r from-violet-core to-magenta"
+                className="absolute inset-0 rounded-full bg-ink"
                 transition={{ type: "spring", stiffness: 300, damping: 28 }}
               />
             )}
