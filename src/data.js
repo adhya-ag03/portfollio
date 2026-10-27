@@ -71,6 +71,20 @@ export const projectFilters = ["All", "AI/ML", "Web"];
 
 export const projects = [
   {
+    title: "Forma",
+    subtitle: "Community platform where designers share work and get hired",
+    category: "Web",
+    cover: "/projects/forma.svg", // replace with your screenshot
+    tags: ["Next.js", "React", "JavaScript", "Vercel"],
+    points: [
+      "Explore feed of design pieces with search, trending tags, category filters and Popular / New / Following sorting",
+      "Hire Designers directory with specialties, hourly rates and availability, plus a jobs board with salary and skill tags",
+      "Editorial Journal and community section with free and Pro tiers, deployed on Vercel",
+    ],
+    github: "https://github.com/adhya-ag03/Forma",
+    demo: "https://forma-one-black.vercel.app/",
+  },
+  {
     title: "Hand Gesture Recognition System",
     subtitle: "Touch-free interaction, powered by computer vision",
     category: "AI/ML",
