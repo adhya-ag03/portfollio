@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#160c2b"/>
+      <stop offset="100%" stop-color="#0b0714"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="360" fill="url(#bg)"/>
+  <g opacity="0.9">
+    <rect x="130" y="120" width="90" height="130" rx="8" fill="#8b5cf6" opacity="0.25" stroke="#8b5cf6"/>
+    <rect x="240" y="100" width="100" height="150" rx="8" fill="#d946ef" opacity="0.3" stroke="#d946ef"/>
+    <rect x="360" y="120" width="90" height="130" rx="8" fill="#8b5cf6" opacity="0.25" stroke="#8b5cf6"/>
+  </g>
+  <path d="M290 150l8 18 20 2-15 13 5 20-18-11-18 11 5-20-15-13 20-2z" fill="#f0abfc"/>
+  <g stroke="#a78bfa" stroke-width="1.5" opacity="0.6" fill="none">
+    <path d="M175 270c40 24 250 24 290-10"/>
+  </g>
+  <circle cx="465" cy="258" r="5" fill="#d946ef"/>
+  <text x="320" y="330" text-anchor="middle" font-family="monospace" font-size="13" fill="#8e87a3" letter-spacing="4">GET RECOMMEND · +40% DAU</text>
+</svg>

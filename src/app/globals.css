@@ -1,0 +1,232 @@
+@import "tailwindcss";
+
+@theme {
+  --color-void: #050308;
+  --color-space: #0b0714;
+  --color-panel: #120b1f;
+  --color-edge: #2a1d47;
+  --color-violet-core: #8b5cf6;
+  --color-violet-soft: #a78bfa;
+  --color-magenta: #d946ef;
+  --color-cyan: #22d3ee;
+  --color-blue: #60a5fa;
+  --color-emerald: #34d399;
+  --color-ink: #ede9fe;
+  --color-muted: #a9a2c0;
+}
+
+@theme inline {
+  --font-display: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--color-void);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background: var(--color-void);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--color-violet-core);
+  color: white;
+}
+
+/* Hide native cursor only when the custom one is active (desktop, fine pointer) */
+@media (pointer: fine) {
+  body[data-custom-cursor="true"] {
+    cursor: none;
+  }
+  body[data-custom-cursor="true"] a,
+  body[data-custom-cursor="true"] button {
+    cursor: none;
+  }
+}
+
+/* Focus rings for keyboard users */
+:focus-visible {
+  outline: 2px solid var(--color-violet-soft);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Thin themed scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-void);
+}
+::-webkit-scrollbar-thumb {
+  background: #2a1d47;
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-violet-core);
+}
+
+/* ---------- Reusable pieces ---------- */
+
+.glass {
+  background: rgba(18, 11, 31, 0.55);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(139, 92, 246, 0.14);
+}
+
+.glow-text {
+  text-shadow:
+    0 0 24px rgba(139, 92, 246, 0.55),
+    0 0 72px rgba(217, 70, 239, 0.25);
+}
+
+.gradient-text {
+  background: linear-gradient(100deg, #a78bfa 0%, #d946ef 48%, #22d3ee 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Grain overlay for depth */
+.noise::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 5;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Static CSS fallback when WebGL is off (mobile / low power / reduced motion) */
+.hero-fallback {
+  background:
+    radial-gradient(ellipse 60% 38% at 50% 48%, rgba(217, 70, 239, 0.22), transparent 70%),
+    radial-gradient(ellipse 42% 26% at 50% 48%, rgba(139, 92, 246, 0.45), transparent 70%),
+    radial-gradient(circle 110px at 50% 48%, #000 58%, rgba(139, 92, 246, 0.5) 66%, transparent 72%),
+    radial-gradient(ellipse at 20% 15%, rgba(34, 211, 238, 0.07), transparent 55%),
+    radial-gradient(ellipse at 85% 75%, rgba(96, 165, 250, 0.07), transparent 55%),
+    var(--color-void);
+}
+.hero-fallback::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(1px 1px at 12% 22%, #fff, transparent),
+    radial-gradient(1px 1px at 78% 12%, rgba(255, 255, 255, 0.8), transparent),
+    radial-gradient(1.5px 1.5px at 62% 74%, rgba(167, 139, 250, 0.9), transparent),
+    radial-gradient(1px 1px at 32% 82%, rgba(255, 255, 255, 0.7), transparent),
+    radial-gradient(1px 1px at 88% 56%, rgba(255, 255, 255, 0.75), transparent),
+    radial-gradient(1.5px 1.5px at 44% 8%, rgba(217, 70, 239, 0.8), transparent),
+    radial-gradient(1px 1px at 6% 60%, rgba(255, 255, 255, 0.6), transparent);
+  background-repeat: no-repeat;
+}
+
+/* Education marquee */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.marquee-track {
+  animation: marquee 36s linear infinite;
+  will-change: transform;
+}
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+  .marquee {
+    overflow-x: auto;
+  }
+}
+
+/* Spinning circular badge */
+@keyframes spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.spin-slow {
+  animation: spin-slow 14s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .spin-slow {
+    animation: none;
+  }
+}
+
+/* Pulsing availability dot */
+@keyframes ping-dot {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(2.6);
+    opacity: 0;
+  }
+}
+.ping-dot::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  background: #4ade80;
+  animation: ping-dot 1.6s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .ping-dot::after {
+    animation: none;
+    opacity: 0;
+  }
+}
+
+/* Project card glow border follows the pointer (via --mx/--my set in JS) */
+.tilt-card {
+  position: relative;
+  transform-style: preserve-3d;
+}
+.tilt-card::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: radial-gradient(
+    240px circle at var(--mx, 50%) var(--my, 50%),
+    rgba(167, 139, 250, 0.9),
+    rgba(139, 92, 246, 0.15) 45%,
+    transparent 70%
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+.tilt-card:hover::before {
+  opacity: 1;
+}
