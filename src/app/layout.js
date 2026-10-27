@@ -22,7 +22,7 @@ const jetbrains = JetBrains_Mono({
 
 export const metadata = {
   metadataBase: new URL(site.ogUrl),
-  title: `${site.name} — ${site.title}`,
+  title: `${site.name} | ${site.title}`,
   description: `${site.roleLine}. ${site.heroIntro}`,
   keywords: [
     "Adhya Agarwal",
@@ -37,7 +37,7 @@ export const metadata = {
   ],
   authors: [{ name: site.name, url: site.github }],
   openGraph: {
-    title: `${site.name} — ${site.title}`,
+    title: `${site.name} | ${site.title}`,
     description: site.heroIntro,
     url: site.ogUrl,
     siteName: site.name,
@@ -46,7 +46,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${site.name} — ${site.title}`,
+    title: `${site.name} | ${site.title}`,
     description: site.heroIntro,
   },
 };

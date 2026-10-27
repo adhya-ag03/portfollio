@@ -1,5 +1,5 @@
 // ============================================================
-//  ALL SITE CONTENT LIVES HERE — edit freely.
+//  ALL SITE CONTENT LIVES HERE. Edit freely.
 // ============================================================
 
 export const site = {
@@ -9,7 +9,7 @@ export const site = {
   roleLine: "Software Engineer · AI Agents · LLM Evaluation · Full-Stack Development",
   tagline: "Building the agents of tomorrow, shipping the web of today.",
   heroIntro:
-    "I build and break AI agents — designing the evaluation infrastructure that proves whether frontier models are reliable — and ship full-stack products with Next.js, React and FastAPI.",
+    "I build and break AI agents, designing the evaluation infrastructure that proves whether frontier models are reliable, and ship full-stack products with Next.js, React and FastAPI.",
   location: "Gurugram, Haryana, India",
   email: "agarwaladhya03@gmail.com",
   linkedin: "https://linkedin.com/in/adhya-agarwal-995060240",
@@ -26,8 +26,8 @@ export const site = {
 export const about = {
   badge: "Open to opportunities",
   bio: [
-    "I'm a Software Engineer at Ethara AI, where I build and break AI agents — designing the evaluation infrastructure that proves whether frontier models are reliable: multi-provider LLM benchmarking, LLM-as-a-judge grading, state-drift injection, and sandboxed multi-agent orchestration.",
-    "On the other side of the stack, I ship production applications with Next.js, React, TypeScript, FastAPI and Node.js — because a great model deserves a great interface.",
+    "I'm a Software Engineer at Ethara AI, where I build and break AI agents, designing the evaluation infrastructure that proves whether frontier models are reliable: multi-provider LLM benchmarking, LLM-as-a-judge grading, state-drift injection, and sandboxed multi-agent orchestration.",
+    "On the other side of the stack, I ship production applications with Next.js, React, TypeScript, FastAPI and Node.js, because a great model deserves a great interface.",
   ],
   stats: [
     { value: 92, suffix: "%", decimals: 0, label: "Model accuracy", accent: "cyan" },
@@ -42,13 +42,13 @@ export const experience = [
     role: "Software Engineer",
     company: "Ethara AI",
     location: "Gurugram",
-    period: "Apr 2025 — Present",
+    period: "Apr 2025 - Present",
     current: true,
     points: [
       "Grew the open-source WildClawBench benchmark (OpenClaw harness) into a multi-provider evaluation platform routing Claude on AWS Bedrock, GPT-5.5 and OpenRouter through a LiteLLM sidecar with prompt caching and per-request cost tracking",
       "Rebuilt grading as a three-judge LLM council with partial-coverage majority voting and a separate evidence budget per judge, backed by weighted pytest suites as an independent second score",
       "Built drift injection across 101 FastAPI mock services (Slack, GitHub, Stripe, Gmail), where a host-side director silently mutates backend state mid-run to test whether agents re-verify assumptions",
-      "Shipped bounded multi-agent orchestration — up to 5 concurrent sub-agents, each capped at 50 tool calls, 16k tokens and 600s, with a full audit trail of every spawn",
+      "Shipped bounded multi-agent orchestration: up to 5 concurrent sub-agents, each capped at 50 tool calls, 16k tokens and 600s, with a full audit trail of every spawn",
       "Authored prompts and rubrics for a Meta LLaMA 4 Maverick fine-tuning program; built Python and LangChain pipelines benchmarking OpenAI, Gemini, Claude, LLaMA and Grok across finance, e-commerce and healthcare",
       "Deployed to production on AWS EC2 with Docker sandbox isolation, offline dependency vendoring and multimodal trajectories",
       "Built a Next.js, React and Tailwind CSS model-training UI, component library and live metric dashboards for a major tech client; shipped the Kuberha AI website and admin dashboard with role-based access control",
@@ -58,7 +58,7 @@ export const experience = [
     role: "Web Development Intern",
     company: "Zole Systems",
     location: "Noida",
-    period: "May 2024 — Aug 2024",
+    period: "May 2024 - Aug 2024",
     current: false,
     points: [
       "Developed responsive web applications and UIs with React.js, JavaScript, HTML and CSS across devices and browsers",
@@ -119,7 +119,7 @@ export const education = [
     type: "Education",
     title: "B.Tech CSE (AI & ML)",
     org: "Noida Institute of Engineering and Technology",
-    detail: "2021 — 2025 · CGPA 9.6/10",
+    detail: "2021 - 2025 · CGPA 9.6/10",
   },
   {
     type: "Certification",
@@ -148,7 +148,7 @@ export const education = [
 ];
 
 // icon: slug on cdn.simple-icons.org · svg: inline icon key (see Skills.jsx)
-// accent: cyan | magenta | violet | blue | emerald — colors the group
+// accent: cyan | magenta | violet | blue | emerald, colors the group
 export const skillGroups = [
   {
     group: "Languages",

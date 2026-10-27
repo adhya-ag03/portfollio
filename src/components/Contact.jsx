@@ -33,7 +33,7 @@ export default function Contact() {
       if (res.status === 503) {
         // Backend not configured yet → open the visitor's mail client.
         const subject = encodeURIComponent(`Portfolio contact from ${payload.name}`);
-        const body = encodeURIComponent(`${payload.message}\n\n— ${payload.name} (${payload.email})`);
+        const body = encodeURIComponent(`${payload.message}\n\n- ${payload.name} (${payload.email})`);
         window.location.href = `mailto:${site.email}?subject=${subject}&body=${body}`;
         setStatus("idle");
         return;
@@ -106,7 +106,7 @@ export default function Contact() {
               </Magnetic>
               {status === "sent" && (
                 <p className="mt-4 font-mono text-sm text-green-400" role="status">
-                  Message sent — I&apos;ll get back to you soon.
+                  Message sent. I&apos;ll get back to you soon.
                 </p>
               )}
               {status === "error" && (

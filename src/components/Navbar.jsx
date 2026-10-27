@@ -51,7 +51,7 @@ export default function Navbar() {
           href="#hero"
           onClick={go("#hero")}
           className="font-display text-xl font-bold tracking-widest"
-          aria-label={`${site.name} — back to top`}
+          aria-label={`${site.name}, back to top`}
         >
           <span className="gradient-text">{site.logo}</span>
           <span className="text-violet-soft">.</span>

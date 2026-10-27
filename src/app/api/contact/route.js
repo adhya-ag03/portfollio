@@ -2,9 +2,9 @@ import nodemailer from "nodemailer";
 
 /**
  * Contact form backend. Configure in .env.local (see .env.example):
- *   SMTP_USER  — your Gmail address
- *   SMTP_PASS  — a Gmail App Password (myaccount.google.com/apppasswords)
- *   CONTACT_TO — where messages land (defaults to SMTP_USER)
+ *   SMTP_USER: your Gmail address
+ *   SMTP_PASS: a Gmail App Password (myaccount.google.com/apppasswords)
+ *   CONTACT_TO: where messages land (defaults to SMTP_USER)
  * Any other SMTP provider works via SMTP_HOST / SMTP_PORT.
  */
 export async function POST(req) {
@@ -29,7 +29,7 @@ export async function POST(req) {
 
   const { SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, CONTACT_TO } = process.env;
   if (!SMTP_USER || !SMTP_PASS) {
-    // Not configured yet — the frontend falls back to a mailto: link.
+    // Not configured yet: the frontend falls back to a mailto: link.
     return Response.json({ error: "unconfigured" }, { status: 503 });
   }
 
@@ -47,7 +47,7 @@ export async function POST(req) {
       to: CONTACT_TO || SMTP_USER,
       replyTo: `"${name.replace(/"/g, "'")}" <${email}>`,
       subject: subject ? `[Portfolio] ${subject}` : `[Portfolio] Message from ${name}`,
-      text: `${message}\n\n— ${name} (${email})`,
+      text: `${message}\n\n- ${name} (${email})`,
     });
 
     return Response.json({ ok: true });
